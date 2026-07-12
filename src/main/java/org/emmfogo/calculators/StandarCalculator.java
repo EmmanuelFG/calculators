@@ -1,8 +1,13 @@
 package org.emmfogo.calculators;
 
+import org.emmfogo.solvers.ISolver;
+
 import javax.swing.*;
+import java.awt.*;
 
 public class StandarCalculator extends JDialog implements ICalculator {
+    private final ISolver solver;
+    private final Window parent;
     private JPanel contentPane;
     private JTextField txtOperation;
     private JButton btnFour;
@@ -24,5 +29,12 @@ public class StandarCalculator extends JDialog implements ICalculator {
     private JButton returnHomeButton;
     private JButton btnEquals;
 
+    public StandarCalculator(ISolver solver, Window parent) {
+        setLocationRelativeTo(null);
+        this.parent = parent;
+        this.solver = solver;
+        setContentPane(contentPane);
+        pack();
+    }
 
 }

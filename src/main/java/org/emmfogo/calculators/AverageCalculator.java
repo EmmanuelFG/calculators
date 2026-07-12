@@ -3,10 +3,13 @@ package org.emmfogo.calculators;
 import org.emmfogo.solvers.ISolver;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AverageCalculator extends JDialog implements ICalculator {
+    private final ISolver solver;
+    private final Window parent;
     private JPanel contentPane;
     private JTextField txtInteractive;
     private JButton btnOne;
@@ -25,10 +28,15 @@ public class AverageCalculator extends JDialog implements ICalculator {
     private JButton btnEquals;
     private JButton btnReturn;
     private JLabel lblName;
-    private ISolver solver;
 
-    public AverageCalculator() {
+    public AverageCalculator(ISolver solver, Window parent) {
+        setLocationRelativeTo(null);
+        this.parent = parent;
+        this.solver = solver;
+        setContentPane(contentPane);
         configureNumberBtns();
+
+        pack();
     }
 
 
@@ -52,7 +60,15 @@ public class AverageCalculator extends JDialog implements ICalculator {
                 txtInteractive.setText(input);
             });
         });
-
-
     }
+
+    private void configBtnSpace() {
+        btnSpace.addActionListener(e -> {
+            String input = txtInteractive.getText();
+            input = input + " ";
+            txtInteractive.setText(input);
+        });
+    }
+
+
 }

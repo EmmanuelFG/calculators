@@ -1,14 +1,14 @@
 package org.emmfogo;
 
 
-import org.emmfogo.validators.IValidator;
-import org.emmfogo.validators.InputValidator;
+import org.emmfogo.access.AccessValidator;
+import org.emmfogo.access.IAccess;
 
 import javax.swing.*;
 
 public class Main {
     static void main() {
-        IValidator validator = new InputValidator();
+        IAccess validator = new AccessValidator();
         JFrame frame = new JFrame();
         frame.setContentPane(new Principal(validator).getMyPanel());
         frame.setVisible(true);

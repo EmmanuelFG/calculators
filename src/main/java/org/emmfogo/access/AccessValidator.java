@@ -1,6 +1,6 @@
-package org.emmfogo.validators;
+package org.emmfogo.access;
 
-public class InputValidator implements IValidator {
+public class AccessValidator implements IAccess {
     @Override
     public boolean validate(String calculatorType, String role) {
         return (calculatorType.equals("Standar calculator") && role.equals("student")) ||
