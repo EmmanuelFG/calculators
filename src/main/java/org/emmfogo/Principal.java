@@ -2,10 +2,11 @@ package org.emmfogo;
 
 import org.emmfogo.access.IAccess;
 import org.emmfogo.calculators.AverageCalculator;
-import org.emmfogo.calculators.ICalculator;
 import org.emmfogo.calculators.StandarCalculator;
 import org.emmfogo.solvers.MeanSolver;
 import org.emmfogo.solvers.StandarSolver;
+import org.emmfogo.validators.AverageValidator;
+import org.emmfogo.validators.StandarValidator;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,7 +24,7 @@ public class Principal {
     private JLabel lblRole;
     private JLabel lblMain;
     private ButtonGroup roleButtons;
-    private ICalculator calculator;
+
 
     public Principal(IAccess accessValidator) {
         this.accessValidator = accessValidator;
@@ -60,13 +61,13 @@ public class Principal {
                 Window original = SwingUtilities.getWindowAncestor(myPanel);
                 if (role.equals("student")) {
                     StandarSolver solver = new StandarSolver();
-                    calculator = new StandarCalculator(solver, original);
-                    StandarCalculator standar = (StandarCalculator) calculator;
+                    StandarValidator validator = new StandarValidator();
+                    StandarCalculator standar = new StandarCalculator(solver, original, validator);
                     standar.setVisible(true);
                 } else {
                     MeanSolver solver = new MeanSolver();
-                    calculator = new AverageCalculator(solver, original);
-                    AverageCalculator standar = (AverageCalculator) calculator;
+                    AverageValidator validator = new AverageValidator();
+                    AverageCalculator standar = new AverageCalculator(solver, original, validator);
                     standar.setVisible(true);
                 }
                 original.setVisible(false);

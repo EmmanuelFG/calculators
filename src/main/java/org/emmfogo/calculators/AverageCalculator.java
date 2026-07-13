@@ -1,15 +1,17 @@
 package org.emmfogo.calculators;
 
 import org.emmfogo.solvers.ISolver;
+import org.emmfogo.validators.IValidator;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AverageCalculator extends JDialog implements ICalculator {
+public class AverageCalculator extends JDialog {
     private final ISolver solver;
     private final Window parent;
+    private final IValidator validator;
     private JPanel contentPane;
     private JTextField txtInteractive;
     private JButton btnOne;
@@ -31,11 +33,13 @@ public class AverageCalculator extends JDialog implements ICalculator {
     private JButton btnDelete;
     private JLabel lblResult;
 
-    public AverageCalculator(ISolver solver, Window parent) {
+    public AverageCalculator(ISolver solver, Window parent, IValidator validator) {
+
         this.setLocationRelativeTo(null);
         this.setSize(300, 300);
         this.parent = parent;
         this.solver = solver;
+        this.validator = validator;
         setContentPane(contentPane);
         configureNumberBtns();
         configBtnSpace();
@@ -72,8 +76,10 @@ public class AverageCalculator extends JDialog implements ICalculator {
     private void configBtnSpace() {
         btnSpace.addActionListener(e -> {
             String input = txtInteractive.getText();
-            input = input + " ";
-            txtInteractive.setText(input);
+            if (validator.validateSpecial(input)) {
+                input = input + " ";
+                txtInteractive.setText(input);
+            }
         });
     }
 
@@ -87,16 +93,20 @@ public class AverageCalculator extends JDialog implements ICalculator {
     private void configBtnEquals() {
         btnEquals.addActionListener(e -> {
             String txt = txtInteractive.getText();
-            double solution = solver.solveMathemathicalExpression(txt);
-            lblResult.setText(solution + "");
+            if (validator.validateSpecial(txt)) {
+                double solution = solver.solveMathemathicalExpression(txt);
+                lblResult.setText(solution + "");
+            }
         });
     }
 
     private void configBtnDel() {
         btnDelete.addActionListener(e -> {
-            String txt = txtInteractive.getText();
-            txt = txt.substring(0, txt.length() - 1);
-            txtInteractive.setText(txt);
+            String input = txtInteractive.getText();
+            if (validator.validateEmpty(input)) {
+                input = input.substring(0, input.length() - 1);
+                txtInteractive.setText(input);
+            }
         });
     }
 

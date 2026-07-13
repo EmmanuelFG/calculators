@@ -1,15 +1,17 @@
 package org.emmfogo.calculators;
 
 import org.emmfogo.solvers.ISolver;
+import org.emmfogo.validators.IValidator;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StandarCalculator extends JDialog implements ICalculator {
+public class StandarCalculator extends JDialog {
     private final ISolver solver;
     private final Window parent;
+    private final IValidator validator;
     private JPanel contentPane;
     private JTextField txtOperation;
     private JButton btnFour;
@@ -33,10 +35,11 @@ public class StandarCalculator extends JDialog implements ICalculator {
     private JLabel lblResult;
     private JButton btnDelete;
 
-    public StandarCalculator(ISolver solver, Window parent) {
+    public StandarCalculator(ISolver solver, Window parent, IValidator validator) {
         setLocationRelativeTo(null);
         this.parent = parent;
         this.solver = solver;
+        this.validator = validator;
         setContentPane(contentPane);
         configureNumberBtns();
         configureBtnRtrn();
@@ -87,8 +90,10 @@ public class StandarCalculator extends JDialog implements ICalculator {
     private void configureBtnDel() {
         btnDelete.addActionListener(e -> {
             String input = txtOperation.getText();
-            input = input.substring(0, input.length() - 1);
-            txtOperation.setText(input);
+            if (validator.validateEmpty(input)) {
+                input = input.substring(0, input.length() - 1);
+                txtOperation.setText(input);
+            }
         });
     }
 
@@ -101,8 +106,10 @@ public class StandarCalculator extends JDialog implements ICalculator {
         operationButtons.stream().forEach(e -> {
             e.addActionListener(f -> {
                 String input = txtOperation.getText();
-                input = input + e.getText();
-                txtOperation.setText(input);
+                if (validator.validateSpecial(input)) {
+                    input = input + e.getText();
+                    txtOperation.setText(input);
+                }
             });
         });
     }
@@ -110,8 +117,10 @@ public class StandarCalculator extends JDialog implements ICalculator {
     private void configureBtnEquals() {
         btnEquals.addActionListener(e -> {
             String input = txtOperation.getText();
-            double solution = solver.solveMathemathicalExpression(input);
-            lblResult.setText(solution + "");
+            if (validator.validateSpecial(input)) {
+                double solution = solver.solveMathemathicalExpression(input);
+                lblResult.setText(solution + "");
+            }
         });
     }
 
