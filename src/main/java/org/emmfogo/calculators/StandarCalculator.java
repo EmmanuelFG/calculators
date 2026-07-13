@@ -37,4 +37,5 @@ public class StandarCalculator extends JDialog implements ICalculator {
         pack();
     }
 
+
 }

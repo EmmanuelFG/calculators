@@ -28,15 +28,22 @@ public class AverageCalculator extends JDialog implements ICalculator {
     private JButton btnEquals;
     private JButton btnReturn;
     private JLabel lblName;
+    private JButton btnDelete;
+    private JLabel lblResult;
 
     public AverageCalculator(ISolver solver, Window parent) {
-        setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
+        this.setSize(300, 300);
         this.parent = parent;
         this.solver = solver;
         setContentPane(contentPane);
         configureNumberBtns();
+        configBtnSpace();
+        configBtnClear();
+        configBtnEquals();
+        configBtnRtrn();
+        configBtnDel();
 
-        pack();
     }
 
 
@@ -67,6 +74,35 @@ public class AverageCalculator extends JDialog implements ICalculator {
             String input = txtInteractive.getText();
             input = input + " ";
             txtInteractive.setText(input);
+        });
+    }
+
+    private void configBtnClear() {
+        btnClear.addActionListener(e -> {
+            txtInteractive.setText("");
+        });
+    }
+
+    private void configBtnEquals() {
+        btnEquals.addActionListener(e -> {
+            String txt = txtInteractive.getText();
+            float solution = solver.solveMathemathicalExpression(txt);
+            lblResult.setText(solution + "");
+        });
+    }
+
+    private void configBtnDel() {
+        btnDelete.addActionListener(e -> {
+            String txt = txtInteractive.getText();
+            txt = txt.substring(0, txt.length() - 1);
+            txtInteractive.setText(txt);
+        });
+    }
+
+    private void configBtnRtrn() {
+        btnReturn.addActionListener(e -> {
+            parent.setVisible(true);
+            this.dispose();
         });
     }
 
