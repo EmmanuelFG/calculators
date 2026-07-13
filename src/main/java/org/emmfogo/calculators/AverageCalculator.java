@@ -80,6 +80,7 @@ public class AverageCalculator extends JDialog implements ICalculator {
     private void configBtnClear() {
         btnClear.addActionListener(e -> {
             txtInteractive.setText("");
+            lblResult.setText(" ");
         });
     }
 
