@@ -4,7 +4,7 @@ import java.util.List;
 
 public class MeanSolver implements ISolver {
     @Override
-    public float solveMathemathicalExpression(String operation) {
+    public double solveMathemathicalExpression(String operation) {
         List<String> numbers = List.of((operation.split(" ")));
         float mean = 0;
         for (String number : numbers) {

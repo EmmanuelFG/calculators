@@ -110,7 +110,7 @@ public class StandarCalculator extends JDialog implements ICalculator {
     private void configureBtnEquals() {
         btnEquals.addActionListener(e -> {
             String input = txtOperation.getText();
-            float solution = solver.solveMathemathicalExpression(input);
+            double solution = solver.solveMathemathicalExpression(input);
             lblResult.setText(solution + "");
         });
     }

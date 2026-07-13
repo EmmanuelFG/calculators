@@ -1,5 +1,5 @@
 package org.emmfogo.solvers;
 
 public interface ISolver {
-    float solveMathemathicalExpression(String operation);
+    double solveMathemathicalExpression(String operation);
 }

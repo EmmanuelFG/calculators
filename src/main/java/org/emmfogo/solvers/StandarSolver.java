@@ -1,8 +1,13 @@
 package org.emmfogo.solvers;
 
+import org.mariuszgromada.math.mxparser.Expression;
+
+
 public class StandarSolver implements ISolver {
     @Override
-    public float solveMathemathicalExpression(String operation) {
-        return 0;
+    public double solveMathemathicalExpression(String operation) {
+
+        Expression e = new Expression(operation);
+        return e.calculate();
     }
 }

@@ -5,7 +5,9 @@
     <constraints>
       <xy x="48" y="54" width="370" height="325"/>
     </constraints>
-    <properties/>
+    <properties>
+      <background color="-16777216"/>
+    </properties>
     <border type="none"/>
     <children>
       <grid id="e3588" layout-manager="GridLayoutManager" row-count="4" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -13,7 +15,9 @@
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-16777216"/>
+        </properties>
         <border type="none"/>
         <children>
           <component id="d8cfe" class="javax.swing.JButton" binding="btnFour">
@@ -21,6 +25,8 @@
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="4"/>
             </properties>
           </component>
@@ -29,6 +35,8 @@
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="5"/>
             </properties>
           </component>
@@ -37,6 +45,8 @@
               <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="6"/>
             </properties>
           </component>
@@ -45,6 +55,8 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="7"/>
             </properties>
           </component>
@@ -53,6 +65,8 @@
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="8"/>
             </properties>
           </component>
@@ -61,6 +75,8 @@
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="9"/>
             </properties>
           </component>
@@ -69,6 +85,8 @@
               <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="3"/>
             </properties>
           </component>
@@ -77,6 +95,8 @@
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="2"/>
             </properties>
           </component>
@@ -85,6 +105,8 @@
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="1"/>
             </properties>
           </component>
@@ -93,6 +115,8 @@
               <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="0"/>
             </properties>
           </component>
@@ -101,6 +125,8 @@
               <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="+"/>
             </properties>
           </component>
@@ -109,6 +135,8 @@
               <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="-"/>
             </properties>
           </component>
@@ -117,6 +145,8 @@
               <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="*"/>
             </properties>
           </component>
@@ -125,6 +155,8 @@
               <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="/"/>
             </properties>
           </component>
@@ -133,6 +165,8 @@
               <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="."/>
             </properties>
           </component>
@@ -141,6 +175,8 @@
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="C"/>
             </properties>
           </component>
@@ -153,6 +189,8 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-16777216"/>
+          <foreground color="-1"/>
           <horizontalAlignment value="4"/>
         </properties>
       </component>
@@ -161,7 +199,10 @@
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-16777216"/>
+          <foreground color="-1"/>
+        </properties>
         <border type="none"/>
         <children>
           <component id="1ea22" class="javax.swing.JButton" binding="btnReturn">
@@ -169,6 +210,8 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="Return home"/>
             </properties>
           </component>
@@ -177,7 +220,9 @@
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-678383"/>
               <font size="14"/>
+              <foreground color="-1"/>
               <text value="="/>
             </properties>
           </component>
@@ -186,6 +231,8 @@
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-10988974"/>
+              <foreground color="-1"/>
               <text value="Del"/>
             </properties>
           </component>
@@ -196,6 +243,8 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-16777216"/>
+          <foreground color="-1"/>
           <horizontalTextPosition value="4"/>
           <text value=" "/>
         </properties>
